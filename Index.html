@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blissberry Coffee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+  .hero-bg {
+    background-image: url(https://img.freepik.com/fotos-premium/croissant-crema-chocolate-fresas_271740-460.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color:white;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-bg::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+
+  }
+</style>
+<body>
+
+  <section class="hero-bg d-flex aligns-items-center">
+    <div class="container text-center">
+      <h1 class="display-3 fw-bold">Bienvenido a Blissberry Coffee</h1>
+      <p class="lead">Donde el café se encuentra en la dulzura de la fresa. </p>
+    </div>
+    
+  </section>
+</body>
+</html>
