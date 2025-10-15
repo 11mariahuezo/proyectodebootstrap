@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlissBerry Coffee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+  /* Navbar con degradado verde y marrón  */
+    .custom-navbar {
+      background: linear-gradient(90deg, #BBA287, #876C4E);
+    }
+
+    /* Ajustar logo */
+    .navbar-brand img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    /* Links */
+    .navbar .nav-link {
+      color: #F4E8DA !important;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .navbar .nav-link:hover {
+      color: #583314 !important;
+    }
+
+    /* Botón de búsqueda */
+    .btn-search {
+      background-color: #876C4E;
+      color: #F4E8DA;
+      border: none;
+      transition: background 0.3s ease;
+    }
+    .btn-search:hover {
+      background-color: #583314;
+      color: #F4E8DA;
+    }
+     .btn-rojo {
+      background-color: #dc3545;
+      color: white;
+    }
+    .platillo-img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+    }
+    .product-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .product-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    footer {
+      background-color: #876c4e;
+      color: white;
+      padding: 50px 0;
+    }
+     .descripciondelfooter {
+      font-size: 1.2rem;
+      color: #f8f9fa;
+      line-height: 1.8;
+    }
+
+    .logosdelfooter {
+      display: flex;
+      justify-content: center; /* Centra los logotipos horizontalmente */
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .logosdelfooter img {
+      max-width: 50px;
+      height: auto;
+    }
+
+    .derechosreservados {
+      margin-top: 30px; /* Espacio entre logos y el texto */
+    }
+</style>
+<body>
+    <!--Aqui está el navbar-->
+     <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="img/logo.png" alt="BlissBerry Coffee Logo"></a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarScroll">
+<!-- Links alineados a la izquierda -->
+        <ul class="navbar-nav me-auto mb-2 my-lg-0 navbar-nav-scroll">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Menu.html">Menú</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Sobrenosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+
+<!-- Barra de búsqueda con botón -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+          <button class="btn btn-search" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+ <div class="container my-5">
+  <h1 class="text-center mb-4">Menú Blissberry</h1>
+
+  <div class="accordion" id="menuAccordion">
+
+    <!-- COMIDAS -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingComidas">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComidas" aria-expanded="true" aria-controls="collapseComidas">
+          Comidas
+        </button>
+      </h2>
+      <div id="collapseComidas" class="accordion-collapse collapse show" aria-labelledby="headingComidas" data-bs-parent="#menuAccordion">
+        <div class="accordion-body">
+
+          <!-- Snacks -->
+          <h5>Snacks salados</h5>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/eb/f3/21/ebf321da1446708eaacf41b5cfe04ddd.jpg" alt="Sandwich" class="product-img">
+                Sandwich de pollo con papas
+              </div>
+              <button class="btn btn-danger btn-sm"
+                onclick="showProduct('Sandwich de pollo con papas fritas.', 'Pan suave relleno de pollo sazonado, acompañado con papas fritas crujientes. $6.50','https://i.pinimg.com/1200x/eb/f3/21/ebf321da1446708eaacf41b5cfe04ddd.jpg')">
+                Ver más
+              </button>
+            </li>
+
+          </ul>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/c8/5a/90/c85a90fc81b7dfb3ddd5c165b20b5b90.jpg" alt="Croissant de jamón y queso" class="product-img">
+                Croissant de jamón y queso
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Croissant de jamón y queso', 'Croissant relleno de jamón y queso fundido. Disponible frío o caliente. $4.00','https://i.pinimg.com/736x/c8/5a/90/c85a90fc81b7dfb3ddd5c165b20b5b90.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+          
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://www.dontgobaconmyheart.co.uk/wp-content/uploads/2019/06/bbq-chicken-wrap-744x900.jpg" alt="Wrap de pollo BBQ" class="product-img">
+                Wrap de pollo BQQ
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Wrap de pollo', 'Tortilla de harina rellena de pollo a la barbacoa, lechuga y aderezo ranch. $6.00','https://www.dontgobaconmyheart.co.uk/wp-content/uploads/2019/06/bbq-chicken-wrap-744x900.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/ec/80/cb/ec80cb3ce2c456f4785b254e4ea6e0f6.jpg" alt="Burrito de res y tocino" class="product-img">
+                Burrito de res y tocino
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Burrito de res y tocino', 'Tortilla rellena de carne, tocino, queso y jalapeño. $5.00','https://i.pinimg.com/1200x/ec/80/cb/ec80cb3ce2c456f4785b254e4ea6e0f6.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <!-- Platos principales -->
+          <h5>Platos Principales</h5>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/5a/f6/bc/5af6bc132fe3b17fd87c5189db7798bd.jpg" alt="Corte de res" class="product-img">
+               Corte de res  
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Corte de res ', 'Corte de res a la parrilla con salsa y guarnición. $15.50','https://i.pinimg.com/1200x/5a/f6/bc/5af6bc132fe3b17fd87c5189db7798bd.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://th.bing.com/th/id/R.011a10034490f419e1ddcf0ba5dbd78a?rik=cj5yR1w4s7cP%2bg&pid=ImgRaw&r=0" alt="Pollo al horno con papas" class="product-img">
+                Pollo al horno con papas
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Pollo al horno con papas', 'Plato fuerte con sazón criollo. $6.50','https://th.bing.com/th/id/R.011a10034490f419e1ddcf0ba5dbd78a?rik=cj5yR1w4s7cP%2bg&pid=ImgRaw&r=0' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/2a/e2/cc/2ae2cca2df5c972d3e3928de84e1bc0e.jpg" alt="Hamburguesa casera con papas" class="product-img">
+                Hamburguesa casera con papas
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Hamburguesa casera con papas', 'Pan casero, carne jugosa, vegetales frescos. $7.00','https://i.pinimg.com/1200x/2a/e2/cc/2ae2cca2df5c972d3e3928de84e1bc0e.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/90/73/4e/90734e4b2183263f1162f99dd29f4587.jpg" alt="Pizza margarita" class="product-img">
+                Pizza margarita individual
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Pizza margarita individual', 'Tomate, albahaca y queso mozzarella. $6.00','https://i.pinimg.com/736x/90/73/4e/90734e4b2183263f1162f99dd29f4587.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- BEBIDAS -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingBebidas">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBebidas" aria-expanded="false" aria-controls="collapseBebidas">
+          Bebidas
+        </button>
+      </h2>
+      <div id="collapseBebidas" class="accordion-collapse collapse" aria-labelledby="headingBebidas" data-bs-parent="#menuAccordion">
+        <div class="accordion-body">
+
+          <!-- Bebidas frías -->
+          <h5>Frías</h5>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/66/bd/32/66bd320679db4217c5c20785a961d1bc.jpg" alt="Cafe Mocha frio" class="product-img">
+                Cafe Mocha frio
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Cafe mocha frio', 'Espresso con leche, chocolate y hielo. Dulce y cremoso.  $3.75','https://i.pinimg.com/736x/66/bd/32/66bd320679db4217c5c20785a961d1bc.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/8c/79/14/8c7914fd444376555ab0de073f082144.jpg" alt="Latte helado" class="product-img">
+                Latte helado
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Latte helado', 'Café espresso con leche fría y hielo. Suave y ligero.   $3.00','https://i.pinimg.com/736x/8c/79/14/8c7914fd444376555ab0de073f082144.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/2c/26/0e/2c260ec2de65ff933fa6123e50e11912.jpg" alt="Affogato" class="product-img">
+                Affogato
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Affogato', 'Bola de helado bañada en espresso caliente. Postre y café en uno.  $4.00','https://i.pinimg.com/1200x/2c/26/0e/2c260ec2de65ff933fa6123e50e11912.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/8a/cb/8a/8acb8a26524bec9a6829905be491aaa2.jpg" alt="Cafe con leche condensada frio" class="product-img">
+                Café con leche condensada frio
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Café con leche condensada frio', ' Café frío con leche condensada y hielo. Dulce y fuerte. $2.75','https://i.pinimg.com/736x/8a/cb/8a/8acb8a26524bec9a6829905be491aaa2.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/c2/6f/a3/c26fa36d3c7b05a023d4c6e1bbe9d634.jpg" alt="Smoothie de fresa y banano" class="product-img">
+                Smoothie de fresa y banano
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Smoothie de fresa y banano', ' Fruta natural licuada con yogur. $2.75','https://i.pinimg.com/736x/c2/6f/a3/c26fa36d3c7b05a023d4c6e1bbe9d634.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/4c/04/f0/4c04f0cb3399d2c2792e14e52cc5ba82.jpg" alt="Milkshake de fresa" class="product-img">
+                Milkshake de fresa
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Milkshake de fresa', 'Batido cremoso de leche y helado de fresa, decorado con crema batida y trozos de fruta fresca. . $3.00','https://i.pinimg.com/736x/4c/04/f0/4c04f0cb3399d2c2792e14e52cc5ba82.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/84/18/62/841862243e661a0d0b95f9d17e259e26.jpg" alt="Limonada de fresa" class="product-img">
+                Limonada de fresa
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Limonada de fresa', 'Refrescante y natural. $2.75','https://i.pinimg.com/736x/84/18/62/841862243e661a0d0b95f9d17e259e26.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/25/72/48/257248dfd7d3c7859857c5af2842d8fd.jpg" alt="Daiquiri de fresa" class="product-img">
+                Daiquiri de fresa
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Daiquiri de fresa', 'Cóctel fresco, a base de fresa, ron y zumo de limón. . $6.75','https://i.pinimg.com/736x/25/72/48/257248dfd7d3c7859857c5af2842d8fd.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+           
+          <!-- Bebidas Calientes -->
+          <h5>Calientes</h5>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/4c/28/e2/4c28e2420bf38c50120dba0cbaf42e8d.jpg" alt="Espresso" class="product-img">
+                Espresso
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Espresso', 'Café intenso y concentrado, servido en una pequeña taza. $1.50','https://i.pinimg.com/736x/4c/28/e2/4c28e2420bf38c50120dba0cbaf42e8d.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/8a/b3/b3/8ab3b31d393994de0eff87eff0e443f6.jpg" alt="Americano" class="product-img">
+                Americano
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Americano', 'Espresso diluido con agua caliente, suave pero con cuerpo. $2.50','https://i.pinimg.com/736x/8a/b3/b3/8ab3b31d393994de0eff87eff0e443f6.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/c9/8d/04/c98d046bf1085bc59f77893bf9779244.jpg" alt="Cappuccino" class="product-img">
+                Cappuccino
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Cappuccino', 'Mezcla equilibrada de espresso, leche vaporizada y espuma de leche.  $3.50','https://i.pinimg.com/736x/c9/8d/04/c98d046bf1085bc59f77893bf9779244.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/e3/83/f9/e383f9aba12fcabbffd116323690fb57.jpg" alt="Latte" class="product-img">
+                Latte
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Latte', ' Espresso con abundante leche vaporizada, suave y cremoso. $3.00','https://i.pinimg.com/736x/e3/83/f9/e383f9aba12fcabbffd116323690fb57.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/b1/8d/50/b18d50fa62686644792732a3f609275f.jpg" alt="Mocha" class="product-img">
+                Mocha
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Mocha', 'Latte con chocolate y un toque de crema batida., $4.00','https://i.pinimg.com/1200x/b1/8d/50/b18d50fa62686644792732a3f609275f.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/b1/8d/50/b18d50fa62686644792732a3f609275f.jpg" alt="Macchiato" class="product-img">
+                Macchiato
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Macchiato', ' Espresso con una pequeña cantidad de espuma de leche. $2.50 ','https://i.pinimg.com/1200x/b1/8d/50/b18d50fa62686644792732a3f609275f.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/c5/f6/23/c5f623cba688460a7311e57d8090fc07.jpg" alt="Chai latte" class="product-img">
+                Chai latte
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Chai latte', 'Té negro con especias, leche vaporizada y un toque dulce. $3.50 ','https://i.pinimg.com/1200x/c5/f6/23/c5f623cba688460a7311e57d8090fc07.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/35/8f/89/358f89b1649380f56685c3f4d6e61e51.jpg" alt="Chocolate caliente" class="product-img">
+                Chocolate caliente
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Chocolate caliente', 'Bebida dulce y reconfortante a base de cacao y leche. $2.50 ','https://i.pinimg.com/736x/35/8f/89/358f89b1649380f56685c3f4d6e61e51.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- POSTRES -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingPostres">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePostres" aria-expanded="false" aria-controls="collapsePostres">
+          Postres
+        </button>
+      </h2>
+      <div id="collapsePostres" class="accordion-collapse collapse" aria-labelledby="headingPostres" data-bs-parent="#menuAccordion">
+        <div class="accordion-body">
+
+          <!-- Pasteles -->
+          <h5>Pasteles</h5>
+                    <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/1200x/b1/c9/c0/b1c9c0d5b972484daa2fc79f52f0840f.jpg" alt="Cheesecake" class="product-img">
+                Cheesecake
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Cheesecake', 'Postre cremoso de queso cubierto de mermelada de frutos rojos sobre una base de galleta.. $3.00 ','https://i.pinimg.com/1200x/b1/c9/c0/b1c9c0d5b972484daa2fc79f52f0840f.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+          <!--Helados -->
+          <h5>Helados</h5>
+                    <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <div class="product-item">
+                <img src="https://i.pinimg.com/736x/5a/65/81/5a65816eb39fcf5131b1b7ebdd236f22.jpg" alt="Helad artesanal" class="product-img">
+                Helado artesanal
+              </div>
+              <button class="btn btn-danger btn-sm" 
+              onclick="showProduct('Helado artesanal', 'Helado artesanal hecho con frambuesa $1.50 ','https://i.pinimg.com/736x/5a/65/81/5a65816eb39fcf5131b1b7ebdd236f22.jpg' )">
+              Ver más
+            </button>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productModalLabel">Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body text-center">
+        <!-- Imagen del producto -->
+        <img id="productModalImage" src="" alt="Imagen del producto" class="img-fluid rounded mb-3" style="max-height: 200px;">
+        
+        <!-- Descripción del producto -->
+        <p id="productModalBody">Descripción del producto.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script para mostrar el modal -->
+<script>
+  function showProduct(nombre, descripcion, ImagenUrl) {
+    document.getElementById('productModalLabel').innerText = nombre;
+    document.getElementById('productModalBody').innerText = descripcion;
+    document.getElementById('productModalImage').src = ImagenUrl;
+    const myModal = new bootstrap.Modal(document.getElementById('productModal'));
+    myModal.show();
+  }
+</script>
+
+<!-- Footer -->
+</section>
+  <!-- Conéctate con nosotros -->
+
+      <nav class="row mb-4">
+
+        <div class="col-12 text-center">
+
+          <h4>Conéctate con nosotros</h4>
+
+          <p>Síguenos en nuestras redes sociales para mantenerte al tanto de las últimas noticias y novedades de nuestra empresa.</p>
+        
+        </div>
+
+      </nav>
+
+      <!-- Logotipos de Instagram y Facebook -->
+
+      <div class="logosdelfooter">
+
+        <a href="https://www.instagram.com/blissberry_coffee?igsh=MTNhanJ0Z20zMWc1dw==" target="_blank">
+          
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Logo de Instagram">
+        
+        </a>
+
+        <a href="https://www.facebook.com" target="_blank">
+
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Logo de Facebook">
+        
+        </a>
+
+      </div>
+
+      <!-- Texto de Derechos Reservados -->
+
+      <div class="row derechosreservados">
+
+        <div class="col-12 text-center">
+
+          <p>&copy; 2025 BlissBerry Coffee. Todos los derechos reservados.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
