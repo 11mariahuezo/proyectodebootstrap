@@ -227,6 +227,64 @@
       </div>
     </div>
   </section>
+
+  <!-- Formulario para que dejen su opinión o sugerencia rápido -->
+<section class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h2 class="text-center mb-4 text-primary">Tu opinión también vale</h2>
+      <p class="text-center mb-4">Déjanos saber tus comentarios, sugerencias o cualquier pensamiento que tengas sobre nuestra cafetería.</p>
+
+      <form class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Tu nombre completo" required>
+          <div class="invalid-feedback">
+            Por favor ingresa tu nombre.
+          </div>
+        </div>
+<!-- correo para responder si hace falta -->
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="correo" placeholder="nombre@ejemplo.com" required>
+          <div class="invalid-feedback">
+            Ingresa un correo válido.
+          </div>
+        </div>
+ <!-- aquí la opinión o lo que quieran contar -->
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Situación u opinión</label>
+          <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          <div class="invalid-feedback">
+            Este campo no puede estar vacío.
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- este script es para que el formulario no se mande si falta algo -->
+<script>
+  (function () {
+    'use strict'
+    const forms = document.querySelectorAll('.needs-validation')
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
+
   <!-- Footer lo usé para denominar mi footer -->
 
   <footer>
